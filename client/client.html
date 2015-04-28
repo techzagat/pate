@@ -1,0 +1,36 @@
+<head>
+  <title>Pate app</title>
+</head>
+
+<body>
+  {{> loginButtons align="right"}}<br>
+  <h1>Pate</h1>
+  {{> welcome }}
+  <!--  {{> input}}
+  {{> tabular table=TabularTables.Messages class="table table-striped table-bordered table-condensed"}}
+-->{{> insertBookForm}}
+  {{> tabular table=TabularTables.Books class="table table-striped table-bordered table-condensed"}}
+  </body>
+
+<template name="welcome">
+  <p>
+    Welcome to Pate App.
+  </p>
+</template>
+<template name="input">
+  <p>Message: <input type="text" id="message"></p>
+</template>
+<template name="messages">
+  {{#each messages}}
+    <strong>{{name}}:</strong> {{message}}<br>
+  {{/each}}
+</template>
+<template name="insertBookForm">
+  {{> quickForm collection="Books" id="insertBookForm" type="insert" template="bootstrap3-horizontal" label-class="col-sm-3" input-col-class="col-sm-9" id-prefix="my-prefix"}}
+</template>
+<!--<template name="tabular">
+  <div>
+    <table {{atts}}></table>
+  </div>
+</template>
+-->
